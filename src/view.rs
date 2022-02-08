@@ -42,7 +42,7 @@ struct GreetTimer(Timer);
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     let mut camera = OrthographicCameraBundle::new_2d();
-    camera.orthographic_projection.scale = 5.0;
+    camera.orthographic_projection.scale = 10.0;
 
     commands.spawn()
         .insert_bundle(camera)
