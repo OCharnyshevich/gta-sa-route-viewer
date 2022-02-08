@@ -10,6 +10,7 @@ env:
 jobs:
   build-aarch64-apple-darwin:
     name: Build aarch64-apple-darwin
+    if: github.event_name == 'release' && github.event.action == 'created'
     strategy:
       matrix:
         os: [ macOS-latest ]
@@ -21,8 +22,6 @@ jobs:
           toolchain: stable
           override: true
       - run: rustup target add aarch64-apple-darwin
-      - run: cargo fetch --target aarch64-apple-darwin
-      - run: cargo build --release --target aarch64-apple-darwin
   build:
     name: Release
     if: github.event_name == 'release' && github.event.action == 'created'
@@ -75,7 +74,7 @@ jobs:
               strip "target/${{ matrix.target }}/release/${{ matrix.bin }}"
           fi
           cp "target/${{ matrix.target }}/release/${{ matrix.bin }}" "$release_name/"
-          cp README.md LICENSE-APACHE LICENSE-MIT assets resources "$release_name/"
+          cp -r README.md LICENSE-APACHE LICENSE-MIT assets resources "$release_name/"
           tar czvf "$release_tar" "$release_name"
           rm -r "$release_name"
           # Windows environments in github actions don't have the gnu coreutils installed,
