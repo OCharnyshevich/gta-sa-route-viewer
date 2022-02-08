@@ -42,7 +42,7 @@ jobs:
       - name: Install musl tools
         if: matrix.os == 'ubuntu-20.04'
         run: |
-          sudo apt-get install -y musl-tools librust-alsa-sys-dev
+          sudo apt-get install -y musl-tools librust-alsa-sys-dev g++ pkg-config libx11-dev libasound2-dev libudev-dev
       - name: Checkout
         uses: actions/checkout@v2
       - name: cargo fetch
