@@ -1,4 +1,4 @@
-[![Rust](https://github.com/OCharnyshevich/gta-sa-route-viewer/actions/workflows/rust.yml/badge.svg?branch=0.1.6)](https://github.com/OCharnyshevich/gta-sa-route-viewer/actions/workflows/rust.yml)
+[![Rust](https://github.com/OCharnyshevich/gta-sa-route-viewer/actions/workflows/rust.yml/badge.svg?branch=0.1.7)](https://github.com/OCharnyshevich/gta-sa-route-viewer/actions/workflows/rust.yml)
 
 # GTA San Andreas rote viewer
 The small app uses original GTA SA assets to draw paths and routes for vehicles, pedestrians, trains, boats, planes, etc., on a map.

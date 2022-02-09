@@ -8,20 +8,6 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build-aarch64-apple-darwin:
-    name: Build aarch64-apple-darwin
-    if: github.event_name == 'release' && github.event.action == 'created'
-    strategy:
-      matrix:
-        os: [ macOS-latest ]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-      - run: rustup target add aarch64-apple-darwin
   build:
     name: Release
     if: github.event_name == 'release' && github.event.action == 'created'
