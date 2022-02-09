@@ -32,18 +32,18 @@ jobs:
             rust: stable
             target: x86_64-unknown-linux-gnu
             bin: gta-sa-route-viewer
-#          - os: windows-latest
-#            rust: stable
-#            target: x86_64-pc-windows-msvc
-#            bin: gta-sa-route-viewer.exe
-#          - os: macOS-latest
-#            rust: stable
-#            target: x86_64-apple-darwin
-#            bin: gta-sa-route-viewer
-#          - os: macOS-latest
-#            rust: stable
-#            target: aarch64-apple-darwin
-#            bin: gta-sa-route-viewer
+          - os: windows-latest
+            rust: stable
+            target: x86_64-pc-windows-msvc
+            bin: gta-sa-route-viewer.exe
+          - os: macOS-latest
+            rust: stable
+            target: x86_64-apple-darwin
+            bin: gta-sa-route-viewer
+          - os: macOS-latest
+            rust: stable
+            target: aarch64-apple-darwin
+            bin: gta-sa-route-viewer
     runs-on: ${{ matrix.os }}
     steps:
       - name: Install stable toolchain
